@@ -1,1 +1,1 @@
-igv.createBrowser = function(element, options);
+igv.createBrowser = function(element, options) {};
