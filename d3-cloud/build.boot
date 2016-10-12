@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.2" :scope "test"]
                   [cljsjs/d3          "3.5.5-0"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
@@ -11,8 +11,8 @@
 (task-options!
  pom  {:project     'cljsjs/d3-cloud
        :version     +version+
-       :description "nil"
-       :url         "nil"
+       :description "A Wordle-inspired word cloud layout written in JavaScript. It uses HTML5 canvas and sprite masks to achieve near-interactive speeds."
+       :url         "https://github.com/jasondavies/d3-cloud"
        :scm         {:url "https://github.com/cljsjs/packages"}
        :license     {"MIT" "http://www.opensource.org/licenses/mit-license.php"}})
 
@@ -27,4 +27,6 @@
 
    (sift :include #{#"^cljsjs"})
    (deps-cljs :name "cljsjs.d3-cloud"
-              :requires ["cljsjs.d3"])))
+              :requires ["cljsjs.d3"])
+   (pom)
+   (jar)))

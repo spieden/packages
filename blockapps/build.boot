@@ -1,6 +1,6 @@
 (set-env!
  :resource-paths #{"resources"}
- :dependencies '[[cljsjs/boot-cljsjs "0.5.0"  :scope "test"]])
+ :dependencies '[[cljsjs/boot-cljsjs "0.5.2"  :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all]
          '[boot.core :as boot]
@@ -9,7 +9,7 @@
          '[boot.util :refer [sh]])
 
 (def +lib-version+ "2.2.5")
-(def +version+ (str +lib-version+ "-0"))
+(def +version+ (str +lib-version+ "-1"))
 
 (task-options!
  pom  {:project     'cljsjs/blockapps
@@ -43,4 +43,6 @@
    (sift :move {#".*blockapps\.js$"       "cljsjs/blockapps/development/blockapps.inc.js"
                 #".*blockapps-min\.js$"   "cljsjs/blockapps/production/blockapps.min.inc.js"})
    (sift :include #{#"^cljsjs"})
-   (deps-cljs :name "cljsjs.blockapps")))
+   (deps-cljs :name "cljsjs.blockapps")
+   (pom)
+   (jar)))

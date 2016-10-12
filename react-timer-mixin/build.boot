@@ -1,6 +1,6 @@
 (set-env!
  :resource-paths #{"resources"}
- :dependencies '[[cljsjs/boot-cljsjs "0.5.1"  :scope "test"]])
+ :dependencies '[[cljsjs/boot-cljsjs "0.5.2"  :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all]
          '[boot.core :as boot]
@@ -44,4 +44,6 @@
            :out "cljsjs/react-timer-mixin/production/TimerMixin.min.inc.js"
            :lang :ecmascript5)
    (sift :include #{#"^cljsjs"})
-   (deps-cljs :name "cljsjs.react-timer-mixin")))
+   (deps-cljs :name "cljsjs.react-timer-mixin")
+   (pom)
+   (jar)))

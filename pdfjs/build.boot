@@ -1,10 +1,10 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.2" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer [download]])
 
-(def +lib-version+ "1.1.3")
+(def +lib-version+ "1.5.188")
 (def +version+ (str +lib-version+ "-0"))
 
 (task-options!
@@ -18,7 +18,7 @@
 (deftask package []
   (comp
     (download :url (format "https://github.com/mozilla/pdf.js/releases/download/v%s/pdfjs-%s-dist.zip" +lib-version+ +lib-version+)
-              :checksum "E25EE439EDC685D83C2D093CEC964A32"
+              :checksum "8646FE88211233E120C28613483D095C"
               :unzip true)
     (sift :move {#"^build/pdf\.js$"         "cljsjs/pdfjs/common/pdf.inc.js"
                  #"^build/pdf\.worker\.js$" "cljsjs/pdfjs/common/pdf.worker.inc.js"
@@ -26,4 +26,6 @@
                  #"^web/(.*)\.js"           "cljsjs/pdfjs/common/$1.inc.js"
                  #"^web/locale/"            "cljsjs/pdfjs/common/locale/"
                  #"^web/images/"            "cljsjs/pdfjs/common/images/"})
-    (sift :include #{#"^cljsjs/" #"^deps\.cljs$"})))
+    (sift :include #{#"^cljsjs/" #"^deps\.cljs$"})
+    (pom)
+    (jar)))

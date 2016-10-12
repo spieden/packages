@@ -1,11 +1,11 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.2" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def +lib-version+ "5.11.0")
-(def codemirror-checksum "a8d5b27ae5ab0d898930aef314afba1c")
+(def +lib-version+ "5.19.0")
+(def codemirror-checksum "d046c9bba67e91ed241f58c3c9786141")
 
 (def +version+ (str +lib-version+ "-0"))
 
@@ -52,6 +52,7 @@
               :checksum codemirror-checksum)
     (sift :move {#"^CodeMirror-([\d\.]*)/lib/codemirror\.js"    "cljsjs/codemirror/development/codemirror.inc.js"
                  #"^CodeMirror-([\d\.]*)/lib/codemirror\.css"   "cljsjs/codemirror/development/codemirror.css"
+                 #"^CodeMirror-([\d\.]*)/mode/meta\.js"         "cljsjs/codemirror/common/mode/meta.js"
                  #"^CodeMirror-([\d\.]*)/mode/(.*)/\2\.js"      "cljsjs/codemirror/common/mode/$2.js"
                  #"^CodeMirror-([\d\.]*)/keymap/(.*)\.js"       "cljsjs/codemirror/common/keymap/$2.js"
                  #"^CodeMirror-([\d\.]*)/addon/(.*)/(.*)\.css"  "cljsjs/codemirror/common/addon/$2/$3.css"
@@ -66,4 +67,6 @@
     (sift :move {#"^cljsjs/codemirror/common/mode/(.*)\.js" "cljsjs/codemirror/common/mode/$1.inc.js"
                  #"^cljsjs/codemirror/common/keymap/(.*)\.js" "cljsjs/codemirror/common/keymap/$1.inc.js"
                  #"^cljsjs/codemirror/common/addon/(.*)/(.*)\.js" "cljsjs/codemirror/common/addon/$1/$2.inc.js"})
-    (generate-extra-deps)))
+    (generate-extra-deps)
+    (pom)
+    (jar)))

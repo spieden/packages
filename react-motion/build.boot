@@ -1,6 +1,6 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.1"  :scope "test"]
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.2"  :scope "test"]
                   [cljsjs/react       "0.14.3-0"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all]
@@ -10,7 +10,7 @@
          '[boot.util :refer [sh]])
 
 (def +lib-version+ "0.4.1")
-(def +version+ (str +lib-version+ "-0"))
+(def +version+ (str +lib-version+ "-1"))
 
 (task-options!
  pom  {:project     'cljsjs/react-motion
@@ -53,4 +53,6 @@
             :out "cljsjs/react-motion/production/react-motion.min.inc.js")
     (sift :include #{#"^cljsjs"})
     (deps-cljs :name "cljsjs.react-motion"
-               :requires ["cljsjs.react"])))
+               :requires ["cljsjs.react"])
+    (pom)
+    (jar)))

@@ -1,11 +1,11 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0"  :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.2"  :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
 (def +lib-version+ "0.1.0")
-(def +version+ (str +lib-version+ "-0"))
+(def +version+ (str +lib-version+ "-1"))
 
 (task-options!
  pom  {:project     'cljsjs/object-assign-shim
@@ -16,4 +16,6 @@
        :license     {"Public Domain" "http://creativecommons.org/publicdomain/zero/1.0/"}})
 
 (deftask package []
-  (deps-cljs :name "cljsjs.object-assign-shim"))
+  (deps-cljs :name "cljsjs.object-assign-shim")
+  (pom)
+  (jar))

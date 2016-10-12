@@ -1,17 +1,17 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]])
+  :dependencies '[[cljsjs/boot-cljsjs "0.5.2" :scope "test"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def +lib-version+ "8.4")
+(def +lib-version+ "9.6.0")
 (def +version+ (str +lib-version+ "-0"))
 
 (task-options!
   pom  {:project     'cljsjs/highlight
         :version     +version+
         :scm         {:url "https://github.com/cljsjs/packages"}
-        :description "Javascript syntax highlighter"
+        :description "JavaScript syntax highlighter"
         :url         "https://highlightjs.org/"
         :license     {"BSD" "http://opensource.org/licenses/BSD-3-Clause"}})
 
@@ -58,13 +58,14 @@
   (comp
     (download :url (format "https://github.com/isagalaev/highlight.js/archive/%s.zip" +lib-version+)
               :unzip true
-              :checksum "2CAC2669F0D1AD1E384543059F10F8F8")
-    (sift :move {#"^highlight\.js-\d?\.\d?/" ""})
+              :checksum "ABC1787BDD25C96C29802321D75C8935")
+    (sift :move {#"^highlight\.js-\d?\.\d?.\d?/" ""})
     (build-highlightjs)
     (sift :move {#"build/highlight\.min\.js" "cljsjs/common/highlight.inc.js"})
     (deps-cljs :name "cljsjs.highlight")
     (sift :move {#"build/languages/(.*)\.min\.js" "cljsjs/common/highlight/$1.inc.js"
                  #"build/styles/(.*)\.css" "cljsjs/common/highlight/$1.css"})
     (sift :include #{#"^cljsjs" #"^deps\.cljs$"})
-    (generate-lang-deps)))
-
+    (generate-lang-deps)
+    (pom)
+    (jar)))

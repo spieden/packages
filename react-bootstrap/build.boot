@@ -1,13 +1,15 @@
 (set-env!
   :resource-paths #{"resources"}
-  :dependencies '[[cljsjs/boot-cljsjs "0.5.0" :scope "test"]
-                  [cljsjs/react-dom "0.14.3-1"]
-                  [org.webjars.bower/bootstrap "3.3.6"]])
+  :dependencies '[[adzerk/bootlaces "0.1.11" :scope "test"]
+                  [cljsjs/boot-cljsjs "0.5.2" :scope "test"]
+                  [cljsjs/react "15.0.1-1"]
+                  [cljsjs/bootstrap "3.3.6-0"]])
 
 (require '[cljsjs.boot-cljsjs.packaging :refer :all])
 
-(def +lib-version+ "0.28.1")
-(def +version+ (str +lib-version+ "-1"))
+(def +lib-version+ "0.30.2")
+(def +version+ (str +lib-version+ "-0"))
+
 
 (task-options!
  pom  {:project     'cljsjs/react-bootstrap
@@ -19,7 +21,7 @@
 
 (deftask download-react-bootstrap []
   (download :url      (format "https://github.com/react-bootstrap/react-bootstrap-bower/archive/v%s.zip" +lib-version+)
-            :checksum "a9df3496eee7df123e22cb409509551a"
+            :checksum "DD246FF009E17EAE57346EF67AFE2749" ;;MD5
             :unzip    true))
 
 (deftask package []
@@ -31,4 +33,6 @@
                  "cljsjs/react-bootstrap/production/react-bootstrap.min.inc.js"})
     (sift :include #{#"^cljsjs"})
     (deps-cljs :name "cljsjs.react-bootstrap"
-               :requires ["cljsjs.react.dom"])))
+               :requires ["cljsjs.react.dom"])
+    (pom)
+    (jar)))
