@@ -2,6 +2,7 @@ var CodeMirror = {
   "scrollbarModel": {},
   "Pos": function () {},
   "cmpPos": function () {},
+  "colorize": function () {},
   "inputStyles": {},
   "wheelEventPixels": function () {},
   "changeEnd": function () {},
@@ -19,11 +20,13 @@ var CodeMirror = {
   "defineExtension": function () {},
   "defineDocExtension": function () {},
   "defineOption": function () {},
+  "defineSimpleMode": function () {},
   "defineInitHook": function () {},
   "helpers": {},
   "registerHelper": function () {},
   "registerGlobalHelper": function () {},
   "copyState": function () {},
+  "showHint": function () {},
   "startState": function () {},
   "innerMode": function () {},
   "commands": {},
@@ -287,4 +290,17 @@ CodeMirror.Doc.prototype = {
   "insertInner": function () {},
   "maybeSpill": function () {},
   "iterN": function () {}
+};
+CodeMirror.emacs.prototype = {
+  "kill": function () {},
+  "killRegion": function () {},
+  "repeated": function () {}
+};
+var FromToObj = {
+    "from": {},
+    "to": {}
+};
+var PosObj = {
+    "line": {},
+    "ch": {}
 };

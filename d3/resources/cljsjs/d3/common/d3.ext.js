@@ -1,5 +1,5 @@
 // D3 Extern generated using: https://github.com/jmmk/javascript-externs-generator
-// With some externs added by hand: Every d3-force objects and the d3.zoom
+// With some externs added by hand: Every d3-force objects, d3.zoom and d3.line
 
 var d3 = {
   "format": function () {},
@@ -136,10 +136,26 @@ var d3 = {
     "x0": function(){},
     "x1": function(){}
   },
-  "line": function () {},
-  "pie": function () {},
+  "line": {
+    "defined": function() {},
+    "x": function() {},
+    "y": function() {},
+    "curve": function() {}
+  },
+  "pie": {
+    "value": function () {},
+    "sortValues": function () {},
+    "sort": function () {},
+    "startAngle": function () {},
+    "endAngle": function () {},
+    "padAngle": function () {}
+  },
   "radialArea": function () {},
-  "radialLine": function () {},
+  "radialLine": {
+    "curve": function () {},
+    "angle": function () {},
+    "radius": function () {}
+  },
   "symbol": function () {},
   "symbols": {},
   "symbolCircle": {
@@ -667,7 +683,6 @@ var d3 = {
   "schemeCategory20b": {},
   "schemeCategory20c": {},
   "schemeCategory20": {},
-  "scaleSequential": function () {},
   "interpolateCubehelixDefault": function () {},
   "interpolateRainbow": function () {},
   "interpolateWarm": function () {},
@@ -788,6 +803,15 @@ var d3 = {
     "theta": function () {},
     "distanceMin": function () {},
     "distanceMax": function () {}
+  },
+  "ForceNode": {
+    "index": {},
+    "x": {},
+    "y": {},
+    "vx": {},
+    "vy": {},
+    "fx": {},
+    "fy": {}
   },
   "forceSimulation": {
     "restart": function () {},
@@ -1048,7 +1072,9 @@ d3.selection.prototype = {
   "sort": function () {},
   "call": function () {},
   "nodes": function () {},
-  "node": function () {},
+  "node": {
+    "getComputedTextLength": function () {}
+  },
   "size": function () {},
   "empty": function () {},
   "each": function () {},

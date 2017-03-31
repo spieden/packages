@@ -212,7 +212,13 @@ var ReactBootstrap = {
       "prevIcon": {
         "isRequired": function () {}
       },
+      "prevLabel": {
+        "isRequired": function () {}
+      },
       "nextIcon": {
+        "isRequired": function () {}
+      },
+      "nextLabel": {
         "isRequired": function () {}
       },
       "bsClass": {
@@ -247,6 +253,7 @@ var ReactBootstrap = {
         },
         "_owner": {}
       },
+      "prevLabel": {},
       "nextIcon": {
         "$$typeof": {},
         "type": {
@@ -268,6 +275,7 @@ var ReactBootstrap = {
         },
         "_owner": {}
       },
+      "nextLabel": {},
       "bsClass": {}
     },
     "Caption": {
@@ -539,10 +547,7 @@ var ReactBootstrap = {
   "Dropdown": {
     "displayName": {},
     "propTypes": {
-      "open": function () {},
-      "defaultOpen": {
-        "isRequired": function () {}
-      }
+      "open": function () {}
     },
     "ControlledComponent": {
       "propTypes": {
@@ -575,6 +580,15 @@ var ReactBootstrap = {
           "isRequired": function () {}
         },
         "role": {
+          "isRequired": function () {}
+        },
+        "rootCloseEvent": {
+          "isRequired": function () {}
+        },
+        "onMouseEnter": {
+          "isRequired": function () {}
+        },
+        "onMouseLeave": {
           "isRequired": function () {}
         },
         "bsClass": {
@@ -650,6 +664,9 @@ var ReactBootstrap = {
         "onSelect": {
           "isRequired": function () {}
         },
+        "rootCloseEvent": {
+          "isRequired": function () {}
+        },
         "bsClass": {
           "isRequired": function () {}
         }
@@ -664,9 +681,6 @@ var ReactBootstrap = {
   "DropdownButton": {
     "propTypes": {
       "open": function () {},
-      "defaultOpen": {
-        "isRequired": function () {}
-      },
       "bsStyle": {
         "isRequired": function () {}
       },
@@ -753,6 +767,9 @@ var ReactBootstrap = {
         "isRequired": function () {}
       },
       "id": {
+        "isRequired": function () {}
+      },
+      "inputRef": {
         "isRequired": function () {}
       },
       "bsClass": {
@@ -1145,6 +1162,9 @@ var ReactBootstrap = {
       "backdrop": {
         "isRequired": function () {}
       },
+      "renderBackdrop": {
+        "isRequired": function () {}
+      },
       "onEscapeKeyUp": {
         "isRequired": function () {}
       },
@@ -1196,6 +1216,7 @@ var ReactBootstrap = {
       "onExited": {
         "isRequired": function () {}
       },
+      "manager": function () {},
       "dialogClassName": {
         "isRequired": function () {}
       },
@@ -1220,6 +1241,14 @@ var ReactBootstrap = {
       "autoFocus": {},
       "enforceFocus": {},
       "onHide": function () {},
+      "manager": {
+        "hideSiblingNodes": {},
+        "handleContainerOverflow": {},
+        "modals": {},
+        "containers": {},
+        "data": {}
+      },
+      "renderBackdrop": function () {},
       "animation": {},
       "dialogComponentClass": {
         "propTypes": {
@@ -1248,11 +1277,15 @@ var ReactBootstrap = {
     },
     "Body": {
       "propTypes": {
+        "componentClass": {
+          "isRequired": function () {}
+        },
         "bsClass": {
           "isRequired": function () {}
         }
       },
       "defaultProps": {
+        "componentClass": {},
         "bsClass": {}
       }
     },
@@ -1284,21 +1317,29 @@ var ReactBootstrap = {
     },
     "Title": {
       "propTypes": {
+        "componentClass": {
+          "isRequired": function () {}
+        },
         "bsClass": {
           "isRequired": function () {}
         }
       },
       "defaultProps": {
+        "componentClass": {},
         "bsClass": {}
       }
     },
     "Footer": {
       "propTypes": {
+        "componentClass": {
+          "isRequired": function () {}
+        },
         "bsClass": {
           "isRequired": function () {}
         }
       },
       "defaultProps": {
+        "componentClass": {},
         "bsClass": {}
       }
     },
@@ -1326,21 +1367,29 @@ var ReactBootstrap = {
   },
   "ModalBody": {
     "propTypes": {
+      "componentClass": {
+        "isRequired": function () {}
+      },
       "bsClass": {
         "isRequired": function () {}
       }
     },
     "defaultProps": {
+      "componentClass": {},
       "bsClass": {}
     }
   },
   "ModalFooter": {
     "propTypes": {
+      "componentClass": {
+        "isRequired": function () {}
+      },
       "bsClass": {
         "isRequired": function () {}
       }
     },
     "defaultProps": {
+      "componentClass": {},
       "bsClass": {}
     }
   },
@@ -1372,11 +1421,15 @@ var ReactBootstrap = {
   },
   "ModalTitle": {
     "propTypes": {
+      "componentClass": {
+        "isRequired": function () {}
+      },
       "bsClass": {
         "isRequired": function () {}
       }
     },
     "defaultProps": {
+      "componentClass": {},
       "bsClass": {}
     }
   },
@@ -1438,9 +1491,6 @@ var ReactBootstrap = {
     "displayName": {},
     "propTypes": {
       "expanded": function () {},
-      "defaultExpanded": {
-        "isRequired": function () {}
-      },
       "bsStyle": {
         "isRequired": function () {},
         "_values": {}
@@ -1469,6 +1519,12 @@ var ReactBootstrap = {
         "onToggle": {
           "isRequired": function () {}
         },
+        "onSelect": {
+          "isRequired": function () {}
+        },
+        "collapseOnSelect": {
+          "isRequired": function () {}
+        },
         "expanded": {
           "isRequired": function () {}
         },
@@ -1486,6 +1542,7 @@ var ReactBootstrap = {
         "staticTop": {},
         "inverse": {},
         "fluid": {},
+        "collapseOnSelect": {},
         "bsClass": {}
       },
       "childContextTypes": {
@@ -1618,9 +1675,6 @@ var ReactBootstrap = {
   "NavDropdown": {
     "propTypes": {
       "open": function () {},
-      "defaultOpen": {
-        "isRequired": function () {}
-      },
       "title": function () {},
       "noCaret": {
         "isRequired": function () {}
@@ -1755,7 +1809,8 @@ var ReactBootstrap = {
         }
       },
       "rootClose": {},
-      "show": {}
+      "show": {},
+      "placement": {}
     }
   },
   "OverlayTrigger": {
@@ -2226,9 +2281,6 @@ var ReactBootstrap = {
   "SplitButton": {
     "propTypes": {
       "open": function () {},
-      "defaultOpen": {
-        "isRequired": function () {}
-      },
       "bsStyle": {
         "isRequired": function () {}
       },
@@ -2309,10 +2361,7 @@ var ReactBootstrap = {
     "Container": {
       "displayName": {},
       "propTypes": {
-        "activeKey": function () {},
-        "defaultActiveKey": {
-          "isRequired": function () {}
-        }
+        "activeKey": function () {}
       },
       "ControlledComponent": {
         "propTypes": {
@@ -2427,10 +2476,7 @@ var ReactBootstrap = {
   "TabContainer": {
     "displayName": {},
     "propTypes": {
-      "activeKey": function () {},
-      "defaultActiveKey": {
-        "isRequired": function () {}
-      }
+      "activeKey": function () {}
     },
     "ControlledComponent": {
       "propTypes": {
@@ -2574,10 +2620,7 @@ var ReactBootstrap = {
   "Tabs": {
     "displayName": {},
     "propTypes": {
-      "activeKey": function () {},
-      "defaultActiveKey": {
-        "isRequired": function () {}
-      }
+      "activeKey": function () {}
     },
     "ControlledComponent": {
       "propTypes": {
@@ -2862,6 +2905,7 @@ ReactBootstrap.Dropdown.prototype = {
   "shouldComponentUpdate": function () {},
   "componentWillMount": function () {},
   "componentWillReceiveProps": function () {},
+  "getControlledInstance": function () {},
   "render": function () {},
   "mixins": function () {},
   "statics": function () {},
@@ -3162,7 +3206,8 @@ ReactBootstrap.Nav.prototype = {
   "componentDidUpdate": function () {},
   "handleTabKeyDown": function () {},
   "getNextActiveChild": function () {},
-  "isChildActive": function () {},
+  "getActiveProps": function () {},
+  "isActive": function () {},
   "getTabProps": function () {},
   "render": function () {},
   "isReactComponent": function () {},
@@ -3175,6 +3220,7 @@ ReactBootstrap.Navbar.prototype = {
   "shouldComponentUpdate": function () {},
   "componentWillMount": function () {},
   "componentWillReceiveProps": function () {},
+  "getControlledInstance": function () {},
   "render": function () {},
   "mixins": function () {},
   "statics": function () {},
@@ -3197,6 +3243,7 @@ ReactBootstrap.Navbar.prototype = {
 };
 ReactBootstrap.Navbar.ControlledComponent.prototype = {
   "getChildContext": function () {},
+  "handleCollapse": function () {},
   "handleToggle": function () {},
   "render": function () {},
   "isReactComponent": function () {},
@@ -3234,6 +3281,7 @@ ReactBootstrap.NavbarBrand.prototype = {
   "forceUpdate": function () {}
 };
 ReactBootstrap.NavDropdown.prototype = {
+  "isActive": function () {},
   "render": function () {},
   "isReactComponent": function () {},
   "setState": function () {},
@@ -3312,7 +3360,6 @@ ReactBootstrap.Pagination.prototype = {
 };
 ReactBootstrap.Panel.prototype = {
   "handleClickTitle": function () {},
-  "shouldRenderFill": function () {},
   "renderHeader": function () {},
   "renderAnchor": function () {},
   "renderCollapsibleBody": function () {},
@@ -3391,6 +3438,7 @@ ReactBootstrap.Tab.Container.prototype = {
   "shouldComponentUpdate": function () {},
   "componentWillMount": function () {},
   "componentWillReceiveProps": function () {},
+  "getControlledInstance": function () {},
   "render": function () {},
   "mixins": function () {},
   "statics": function () {},
@@ -3451,6 +3499,7 @@ ReactBootstrap.TabContainer.prototype = {
   "shouldComponentUpdate": function () {},
   "componentWillMount": function () {},
   "componentWillReceiveProps": function () {},
+  "getControlledInstance": function () {},
   "render": function () {},
   "mixins": function () {},
   "statics": function () {},
@@ -3517,6 +3566,7 @@ ReactBootstrap.Tabs.prototype = {
   "shouldComponentUpdate": function () {},
   "componentWillMount": function () {},
   "componentWillReceiveProps": function () {},
+  "getControlledInstance": function () {},
   "render": function () {},
   "mixins": function () {},
   "statics": function () {},

@@ -2,12 +2,12 @@
 
 [](dependency)
 ```clojure
-[cljsjs/react-bootstrap "0.30.2-0"] ;; latest release
+[cljsjs/react-bootstrap "0.30.7-0"] ;; latest release
 ```
 [](/dependency)
 
 This jar comes with `deps.cljs` as used by the [Foreign Libs][flibs] feature
-of the Clojurescript compiler. After adding the above dependency to your project
+of the ClojureScript compiler. After adding the above dependency to your project
 you can require the packaged library like so:
 
 ```clojure
@@ -19,7 +19,7 @@ To use this with Boot require "boot-less" like so:
 ```clojure
 (set-env!
   :dependencies '[[deraen/boot-less "0.3.0" :scope "test"]
-                  [cljsjs/react-bootstrap "0.29.5-0"]])
+                  [cljsjs/react-bootstrap "0.30.7-0"]])
 
 ```
 create a "main.main.less" file within one of your source-paths with following content
